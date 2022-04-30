@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Sequence Accurate SBOL Tool</h1>
+<hr>
+
+
+<!--<script>
+    function getIndex() {
+        document.getElementById("assemblyStandard").innerHTML =
+            document.getElementById("mySelect").selectedIndex;
+    }
+</script>
+
+<form method="POST">
+    Choose Assembly Standard:
+    <select name="selectm">
+        <option value="1"> BioBricks</option>
+        <option value="2"> Type IIS</option>
+        <option value="3"> GG MoClo</option>
+    </select>
+</form>
+
+<p id="assemblyStandard"></p>-->
+
+
+<form action="/upload-xml" method="POST" enctype="multipart/form-data">
+    
+    <select name="select">
+        <option value="1"> BioBricks</option>
+        <option value="2"> Type IIS</option>
+        <option value="3"> GG MoClo</option>
+    </select>
+
+    <div class="form-group">
+        <label>Step 2: Select SBOL(.xml) File</label>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" name="xmlfile" id="xmlfile">
+
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Download saSBOL file</button>
+</form>
+
+
+
+{% endblock %}

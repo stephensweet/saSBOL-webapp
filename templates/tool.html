@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+
+<form action="" method=post enctype=multipart/form-data>
+    <p>
+        <input type=file name=file>
+        <input type=submit value=Upload>
+</form>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <h1>Upload an image</h1>
+            <hr>
+
+            <form action="/upload-image" method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label>Select image</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="image" id="image">
+                        <label class="custom-file-label" for="image">Select image...</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Upload</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!--<label class="form-label" for="customFile">Default file input example</label>
+<input type="file" class="form-control" id="sequenceAccurateSBOL2file" />
+
+
+<input type="button" id="loadFileXml" value="loadXml" onclick="document.getElementById('file').click();" />
+<input type="file" style="display:none;" id="file" name="file" />
+
+
+
+<label for="formFileMultiple" class="form-label">Please Choose SBOL2(.xml) file(s)</label>
+<input class="form-control" type="file" id="formFileMultiple" multiple />
+
+
+
+<div class="file-upload-wrapper">
+    <input id="dnd-multiple-files" type="file" class="file-upload-input" data-multiple="true" data-file-upload="file-upload">
+</div>-->
+
+<!--<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Action <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
+</div>-->
+
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Choose Assembly Standard
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li class="dropdown-header">Single Transcriptional Unit</li>
+        <li><a href="#">BioBricks</a></li>
+        <li><a href="#">Type IIS</a></li>
+        <li class="dropdown-header">Multiple Part</li>
+        <li><a href="#">GG MoClo</a></li>
+
+        <li role="separator" class="divider"></li>
+        <li><a href="http://parts.igem.org/Help:Standards/Assembly">Learn more about Assembly Methods</a></li>
+    </ul>
+    <input type="button" onclick="getIndex()"
+           value="The Assembly Standard you choose is:">
+</div>
+
+
+
+
+
+<script>
+    function getIndex() {
+        document.getElementById("assemblyStandard").innerHTML =
+            document.getElementById("dropdown-menu").selectedIndex;
+    }
+</script>
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Choose Assembly Standard
+        <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Regular link</a></li>
+        <li><a class="dropdown-item active" href="#" aria-current="true">Active link</a></li>
+        <li><a class="dropdown-item" href="#">Another link</a></li>
+    </ul>
+
+</div>
+
+
+<form method="get" action="formFileMultiple">
+    <button type="submit">Download!!</button>
+</form>
+
+
+<button type="submit"  onclick="window.open(path)">Download!</button>
+
+
+<a href='  ' download="sequenceAccurateSBOL2file">Download</a>
+
+<form>
+    Choose Assembly Standard:
+    <select id="mySelect">
+        <option>BioBricks</option>
+        <option>Type IIS</option>
+        <option>GG MoClo</option>
+    </select>
+    <br><br>
+    <input type="button" onclick="getIndex()"
+           value="The Assembly Standard you choose is:">
+</form>
+<p id="assemblyStandard"></p>
+
+
+
+
+    {% endblock %}

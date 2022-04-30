@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Sequence Accurate SBOL Application</h1>
+    <p class="lead">The Sequence Accurate Extension for SBOLcanvas application eliminates the need for SBOLcanvas users to manually input scar or overhang DNA sequences.    </p>
+    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">saSBOL tool &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>What is SBOLCanvas?</h2>
+        <p>
+            SBOLCanvas is a web application for creation and editing of genetic constructs
+            using the SBOL data and visual standard. SBOLCanvas allows a user to create a 
+            genetic design from start to finish, with the option to incorporate existing SBOL data 
+            from a SynBioHub repository.
+        </p>
+        <p><a class="btn btn-default" href="https://sbolcanvas.org/canvas/">SBOL Canvas &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>saSBOL Application Functionality</h2>
+        <p>
+            Previously, depending on the assembly standard (Biobrick, Berkeley, Silver, Freiburg) and 
+            Assembly Method (TypellS, 3A, Direct DNA synthesis, Gibson Assembly), scar sequences had to be 
+            manually input inbetween the parts such as the promoter, ribosome binding site (RBS), and coding 
+            sequence (CDS). However, more research regarding scar sequences has led to predictable behavior 
+            depending on which assembly method is used. 
+
+            Now, synthetic biologists using SBOL only need to design their target sequence, and once they export that sequence 
+            into an SBOL2 file (.xml), they can import their design into our app. Our tool will then suggest a recommended assembly
+            standard, and once the designer chooses a standard, a sequence accurate SBOL2 file with scars and/or overhangs will be able
+            to be downloaded.
+        </p>
+        <p><a class="btn btn-default" href="http://web.synbioks.org/tools/">Step-by-Step Guide &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Other SBOL tools</h2>
+        <p>More information reagrding SBOL Canvas, the founders, the library of SBOL and SynBio tools, and publications </p>
+        <p><a class="btn btn-default" href="http://web.synbioks.org/author/sbol-canvas/">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}
