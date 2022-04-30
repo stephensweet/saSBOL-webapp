@@ -114,7 +114,17 @@ def upload_xml():
                 print(filename)
 
                 xmlfile.save(os.path.join(app.config["XML_UPLOADS"],"XML_UPLOADS//" + filename))
-                subprocess.Popen(r'explorer /select,".\DOWNLOAD_FOLDER\ReadME.txt"')
+		
+		#If you would like to popup the download folder when file is downloaded, uncomment which system you have
+		#popup download folder code WINDOWS
+                #subprocess.Popen(r'explorer /select,".\DOWNLOAD_FOLDER\ReadME.txt"')
+		
+		#popup download folder code APPLE
+		#subprocess.Popen("./DOWNLOAD_FOLDER//ReadME.txt",shell=True)
+		
+		
+		
+		
                 #xmlfile.save(os.path.join(app.config["XML_UPLOADS"], + filename))
                 #THIS IS WHERE THE MAGIC IS GOIN TO HAPPEN....
                 #once we have successfully checked that the XML file is valid, before writing it to the 
@@ -126,7 +136,7 @@ def upload_xml():
                 # call main - backend code to make SBOL2 file sequence accurate
                 main.saSBOL(filename,assembly)
 
-                #save newXML
+                
                 # very hard to make a way to make not save local .... lots of security issues for browser and path intereaction
 
                
